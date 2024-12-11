@@ -178,6 +178,12 @@ html {
     margin-bottom: 1rem;
 }
 
+.hero h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
 .hero p {
     font-size: 1.2rem;
     color: #333;
@@ -264,14 +270,14 @@ section {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 2rem 1rem; /* Aumentar padding vertical para hacer las tarjetas más largas */
+    padding: 1rem; /* Reducir padding para acomodar la imagen grande */
     cursor: pointer; /* Indicar que es clicable */
-    /* Aspect ratio vertical */
-    aspect-ratio: 3 / 4;
+    /* Aspect ratio ajustado */
+    aspect-ratio: 1 / 1; /* Cuadrado */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Alinear contenido al inicio */
+    justify-content: center; /* Centrar contenido */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -288,17 +294,19 @@ section {
 }
 
 .service-item img {
-    width: 80px; /* Reducir ancho de la imagen para hacer la tarjeta menos ancha */
-    height: 80px; /* Mantener altura proporcional */
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border-radius: 50%;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 80%; /* Ocupa el 80% de la altura del contenedor */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área */
+    margin-bottom: 0.5rem;
+    border-radius: 0; /* Remover borde redondeado */
 }
 
 .service-item h3 {
-    font-size: 1.3rem; /* Reducir tamaño de la fuente */
+    font-size: 1.5rem; /* Aumentar tamaño de la fuente */
     color: #333;
     margin-top: 0.5rem;
+    width: 100%; /* Alinear el título al ancho completo */
+    text-align: center;
 }
 
 /* Testimonios */
