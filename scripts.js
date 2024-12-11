@@ -10,7 +10,7 @@ hamburger.addEventListener('click', () => {
 // Cambiar el estilo de la barra de navegación al hacer scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) { // Ajusta este valor según tus necesidades
+    if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
@@ -20,7 +20,7 @@ window.addEventListener('scroll', () => {
 // Inicializar Swiper para Servicios
 const swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
-    spaceBetween: 30, // Espacio entre slides
+    spaceBetween: 30,
     grabCursor: true,
     pagination: {
         el: ".swiper-pagination",
@@ -32,17 +32,14 @@ const swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-        // cuando el ancho de la ventana es <= 1200px
         1200: {
             slidesPerView: 3,
             spaceBetween: 20,
         },
-        // cuando el ancho de la ventana es <= 1024px
         1024: {
             slidesPerView: 2,
             spaceBetween: 20,
         },
-        // cuando el ancho de la ventana es <= 768px
         768: {
             slidesPerView: 1,
             spaceBetween: 10,
@@ -52,7 +49,7 @@ const swiper = new Swiper(".mySwiper", {
 
 // Inicializar Swiper para Testimonios
 const testimonialsSwiper = new Swiper(".testimonialsSwiper", {
-    slidesPerView: 3, // Mostrar 3 tarjetas en pantallas grandes
+    slidesPerView: 3,
     spaceBetween: 20,
     grabCursor: true,
     loop: true,
@@ -65,17 +62,14 @@ const testimonialsSwiper = new Swiper(".testimonialsSwiper", {
         prevEl: ".testimonialsSwiper .swiper-button-prev",
     },
     breakpoints: {
-        // cuando el ancho de la ventana es <= 1200px
         1200: {
             slidesPerView: 3,
             spaceBetween: 15,
         },
-        // cuando el ancho de la ventana es <= 1024px
         1024: {
             slidesPerView: 2,
             spaceBetween: 15,
         },
-        // cuando el ancho de la ventana es <= 768px
         768: {
             slidesPerView: 1,
             spaceBetween: 10,
@@ -113,15 +107,27 @@ serviceItems.forEach(item => {
     item.addEventListener('click', () => {
         const title = item.getAttribute('data-title');
         const description = item.getAttribute('data-description');
-        const beforeSrc = item.getAttribute('data-before');
-        const afterSrc = item.getAttribute('data-after');
 
         modalTitle.textContent = title;
         modalDescription.textContent = description;
-        beforeImage.src = beforeSrc;
-        beforeImage.alt = `Antes de ${title}`;
-        afterImage.src = afterSrc;
-        afterImage.alt = `Después de ${title}`;
+
+        // Verificar si el servicio es "Street Cleans"
+        if (title === "Street Cleans") {
+            // Si es Street Cleans, mostrar a1.jpg y d1.jpg
+            beforeImage.src = 'images/a1.jpg';
+            beforeImage.alt = `Antes de ${title}`;
+
+            afterImage.src = 'images/d1.jpg';
+            afterImage.alt = `Después de ${title}`;
+        } else {
+            // Para otros servicios puedes:
+            // - Dejar imágenes vacías
+            // - O poner imágenes por defecto
+            beforeImage.src = '';
+            beforeImage.alt = 'Sin imagen';
+            afterImage.src = '';
+            afterImage.alt = 'Sin imagen';
+        }
 
         // Inicializar Swiper en el modal si no está ya inicializado
         if (!beforeAfterSwiper) {
@@ -146,7 +152,7 @@ window.addEventListener('click', (e) => {
 
 // Inicializar Mapa de Google
 function initMap() {
-    const location = { lat: 29.7604, lng: -95.3698 }; // Coordenadas de Houston, TX
+    const location = { lat: 29.7604, lng: -95.3698 };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 15,
         center: location,
@@ -171,8 +177,6 @@ contactForm.addEventListener('submit', function(e) {
         alert('Por favor, completa todos los campos obligatorios.');
         return;
     }
-
-    // Aquí puedes agregar la lógica para enviar el formulario, por ejemplo, usando fetch o AJAX.
 
     alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
     contactForm.reset();
