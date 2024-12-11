@@ -16,86 +16,79 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Navegación */
-.navbar {
-    background: rgba(34, 34, 34, 0.0); /* Inicialmente transparente */
-    color: #fff;
-    padding: 1rem 0;
+/* Header / Navegación */
+.header {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: background 0.5s ease;
-    box-shadow: none; /* Sin sombra inicialmente */
+    background: rgba(34,34,34,0);
+    transition: background 0.3s ease;
 }
 
-.navbar.scrolled {
-    background: rgba(34, 34, 34, 0.8); /* Tono transparente oscuro al hacer scroll */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra al hacer scroll */
+.header.scrolled {
+    background: rgba(34, 34, 34, 0.8);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-.navbar .container {
+.container-nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 85%; /* Reducir ancho del container para desplazar contenido hacia la izquierda */
+    justify-content: space-between;
+    width: 90%;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 0.5rem 0;
 }
 
-.navbar .logo {
-    font-size: 2.5rem; /* Aumentar tamaño del logo */
-    font-weight: bold; /* Negrita */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
     text-decoration: none;
     color: #fff;
 }
 
-.navbar .nav-links {
+.nav {
+    display: flex;
+}
+
+.nav__menu {
     list-style: none;
     display: flex;
+    gap: 2rem;
+    margin: 0;
 }
 
-.navbar .nav-links li {
-    margin-left: 2rem; /* Aumentar el espacio entre enlaces */
-}
-
-.navbar .nav-links a {
+.nav__item .nav__link {
     text-decoration: none;
     color: #fff;
-    font-weight: 700; /* Negrita */
-    font-size: 1.3rem; /* Aumentar tamaño de las letras */
+    font-weight: 700;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
-.navbar .nav-links a:hover {
+.nav__link:hover {
     color: #ddd;
 }
 
-/* Hamburguesa para móviles */
-.hamburger {
+/* Toggler del menú (Hamburguesa) */
+.menu-toggler {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
 }
 
-.hamburger span {
-    height: 4px;
-    width: 30px;
-    background: #fff;
-    margin-bottom: 5px;
-    border-radius: 5px;
+.show-menu {
+    display: none;
 }
 
 /* Botones Fijos en Estilo Burbuja */
 .fixed-buttons {
     position: fixed;
-    bottom: 20px; /* Espacio desde la parte inferior */
-    right: 20px; /* Espacio desde la derecha */
+    bottom: 20px;
+    right: 20px;
     display: flex;
-    flex-direction: column; /* Disposición vertical de los botones */
-    gap: 15px; /* Espacio entre los botones */
-    z-index: 1001; /* Asegura que los botones estén por encima de otros elementos */
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1001;
 }
 
 .fixed-buttons .fab-button {
@@ -117,7 +110,7 @@ html {
 }
 
 .fixed-buttons .fab-button.facebook {
-    background-color: #3b5998; /* Color de Facebook */
+    background-color: #3b5998;
 }
 
 .fixed-buttons .fab-button.facebook:hover {
@@ -139,12 +132,12 @@ html {
 /* Sección Hero */
 .hero {
     background: url('images/1212.jpeg') no-repeat center center/cover;
-    height: 90vh; /* Reducir la altura de la sección Hero */
+    height: 80vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alinear contenido a la izquierda */
+    justify-content: flex-start;
     text-align: left;
-    padding: 0 1%; /* Reducir padding lateral */
+    padding: 0 1%;
     position: relative;
 }
 
@@ -155,7 +148,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Filtro oscuro aumentado a 60% */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
@@ -165,11 +158,11 @@ html {
 }
 
 .hero-text {
-    background: rgba(255, 255, 255, 0.6); /* Mayor transparencia */
-    padding: 1.5rem; /* Reducir padding */
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1.5rem;
     border-radius: 10px;
-    max-width: 450px; /* Reducir max-width */
-    margin-left: 0; /* Alinear a la izquierda */
+    max-width: 450px;
+    margin-left: 0;
 }
 
 .hero h1 {
@@ -215,10 +208,10 @@ section {
 }
 
 .container {
-    width: 85%; /* Reducir ancho del container */
+    width: 85%;
     max-width: 1200px;
-    margin-left: auto; /* Mantener margen izquierdo automático */
-    margin-right: auto; /* Mantener margen derecho automático */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Sección Quiénes Somos */
@@ -270,15 +263,14 @@ section {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 1rem; /* Reducir padding para acomodar la imagen grande */
-    cursor: pointer; /* Indicar que es clicable */
-    /* Aspect ratio ajustado */
-    aspect-ratio: 1 / 1; /* Cuadrado */
+    padding: 1rem;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centrar contenido */
+    justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto !important;
 }
 
 .swiper-slide:hover {
@@ -290,22 +282,22 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%; /* Ocupa toda la altura del slide */
+    height: 100%;
 }
 
 .service-item img {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: 80%; /* Ocupa el 80% de la altura del contenedor */
-    object-fit: cover; /* Ajusta la imagen para cubrir el área */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     margin-bottom: 0.5rem;
-    border-radius: 0; /* Remover borde redondeado */
+    border-radius: 0;
 }
 
 .service-item h3 {
-    font-size: 1.5rem; /* Aumentar tamaño de la fuente */
+    font-size: 1.5rem;
     color: #333;
     margin-top: 0.5rem;
-    width: 100%; /* Alinear el título al ancho completo */
+    width: 100%;
     text-align: center;
 }
 
@@ -322,14 +314,6 @@ section {
     padding: 2rem 0;
 }
 
-.swiper.testimonialsSwiper .swiper-slide {
-    width: 300px; /* Ancho fijo para tarjetas de testimonios */
-    height: 150px; /* Altura fija para tarjetas de testimonios */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .testimonial {
     background: #fff;
     border-radius: 10px;
@@ -338,7 +322,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 150px; /* Menor altura para tarjetas de testimonios */
+    min-height: 150px;
 }
 
 .testimonial p {
@@ -352,7 +336,7 @@ section {
     font-weight: bold;
     color: #f46530;
     font-size: 1.1rem;
-    margin-top: auto; /* Empujar el nombre hacia abajo */
+    margin-top: auto;
 }
 
 /* Formulario de Contacto */
@@ -419,23 +403,23 @@ section {
 
 /* Modal para Servicios */
 .modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Fijo en la pantalla */
-    z-index: 2000; /* Por encima de otros elementos */
+    display: none;
+    position: fixed;
+    z-index: 2000;
     left: 0;
     top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Altura completa */
-    overflow: auto; /* Scroll si es necesario */
-    background-color: rgba(0,0,0,0.5); /* Fondo semi-transparente */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
     background-color: #fff;
-    margin: 5% auto; /* 5% desde arriba y centrado horizontalmente */
+    margin: 5% auto;
     padding: 2rem;
     border: 1px solid #888;
-    width: 80%; /* Ancho del modal */
+    width: 80%;
     max-width: 800px;
     border-radius: 10px;
     position: relative;
@@ -443,7 +427,6 @@ section {
 
 .close-button {
     color: #aaa;
-    float: right;
     font-size: 2rem;
     font-weight: bold;
     position: absolute;
@@ -513,7 +496,6 @@ section {
     color: #f46530;
 }
 
-/* Redes Sociales */
 .social-links {
     list-style: none;
     display: flex;
@@ -531,65 +513,126 @@ section {
     color: #f46530;
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-    .swiper.mySwiper .swiper-slide {
-        width: calc(33.333% - 20px); /* Tres columnas */
-    }
-}
-
-@media (max-width: 1024px) {
-    .swiper.mySwiper .swiper-slide {
-        width: calc(50% - 20px); /* Dos columnas en pantallas medianas */
-    }
-}
-
+/* Responsivo */
 @media (max-width: 768px) {
-    .navbar .nav-links {
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    /* Menú responsivo */
+    #menu-toggler {
+        display: none;
+    }
+
+    .show-menu {
+        display: flex;
+        width: 32px;
+        height: 22px;
+        position: relative;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .show-menu span, 
+    .show-menu span::before, 
+    .show-menu span::after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        background: #fff;
+        border-radius: 3px;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .show-menu span::before {
+        top: -8px;
+    }
+
+    .show-menu span::after {
+        top: 8px;
+    }
+
+    #menu-toggler:checked + .show-menu span {
+        background: transparent;
+    }
+
+    #menu-toggler:checked + .show-menu span::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #menu-toggler:checked + .show-menu span::after {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav__menu {
         position: absolute;
         top: 60px;
-        left: -100%;
-        flex-direction: column;
+        left: 0;
         background: #f46530;
         width: 100%;
-        transition: left 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        transition: max-height 0.3s ease;
+        padding: 0;
+        gap: 1.5rem;
     }
 
-    .navbar .nav-links.active {
-        left: 0;
+    #menu-toggler:checked ~ .nav .nav__menu {
+        max-height: 300px;
+        padding: 1rem 0;
     }
 
-    .navbar .nav-links li {
-        margin: 1.5rem 0;
-        text-align: center;
+    .nav__item {
+        margin: 0;
     }
 
-    .hamburger {
-        display: flex;
+    .nav__link {
+        font-size: 1.2rem;
+        color: #fff;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-text {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     .contact-content {
         flex-direction: column;
     }
 
-    .hero-text {
-        text-align: center; /* Centrar en móviles */
-        max-width: 100%;
+    /* Ajustar las tarjetas de servicios y testimonios en móvil */
+    .services .swiper-slide {
+        width: 80% !important;
+        margin: 0 auto;
     }
 
-    .swiper.mySwiper .swiper-slide {
-        width: 100%; /* Una columna en pantallas pequeñas */
+    .testimonials .swiper-slide {
+        width: 90% !important;
+        margin: 0 auto;
     }
 
-    .swiper-slide {
-        padding: 1rem;
-    }
-
-    .service-item h3 {
-        font-size: 1.3rem;
-    }
-    
-    .testimonialsSwiper .swiper-slide {
+    .testimonials .testimonial {
+        height: auto;
         padding: 1rem;
     }
 }

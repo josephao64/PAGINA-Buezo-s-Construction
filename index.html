@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buezo's Construction</title>
     <!-- Enlace al CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <!-- Swiper CSS -->
     <link
       rel="stylesheet"
@@ -24,24 +24,28 @@
     />
 </head>
 <body>
-    <!-- Barra de Navegación -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Buezo's Construction</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Who We Are</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Header / Barra de Navegación -->
+    <header class="header">
+      <div class="container-nav">
+        <a href="#" class="logo">Buezo's Construction</a>
+
+        <!-- Checkbox para togglear el menú en móvil -->
+        <input id="menu-toggler" type="checkbox" class="menu-toggler" />
+        <label for="menu-toggler" class="show-menu">
+          <span></span>
+        </label>
+
+        <nav class="nav">
+          <ul class="nav__menu">
+            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Who We Are</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+            <li class="nav__item"><a href="#testimonials" class="nav__link">Testimonials</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <!-- Botones Fijos en Estilo Burbuja -->
     <div class="fixed-buttons">
