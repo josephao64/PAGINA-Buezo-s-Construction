@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buezo's Construction</title>
+    <!-- Enlace al CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts (Opcional) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Buezo's Construction</a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Quiénes Somos</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#testimonials">Testimonios</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Botones Fijos en Estilo Burbuja -->
+    <div class="fixed-buttons">
+        <!-- Botón de Facebook -->
+        <a href="https://www.facebook.com/tu-pagina-de-facebook" target="_blank" class="fab-button facebook" aria-label="Facebook">
+            <i class='bx bxl-facebook'></i>
+        </a>
+        <!-- Botón de Contacto -->
+        <a href="#contact" class="fab-button contact" aria-label="Contacto">
+            <i class='bx bx-envelope'></i>
+        </a>
+    </div>
+
+    <!-- Sección de Inicio -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Construyendo Sueños, Fortaleciendo Fundaciones</h1>
+                <p>Con más de 10 años de experiencia en gestión de sitios y servicios de protección ambiental.</p>
+                <a href="#contact" class="btn">Más Información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Quiénes Somos -->
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="images/2323.png" alt="Quiénes Somos">
+            </div>
+            <div class="about-text">
+                <h2>Quiénes Somos</h2>
+                <p>En Buezo's Construction, nos enorgullece ofrecer más de una década de experiencia en la gestión de sitios y servicios de protección ambiental. Ofrecemos instalación de Silt Fence, Orange Fence, Sand Bags, limpieza de calles, lavado a presión, Storm Covers y Wire Trash Bins.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <!-- Swiper para Servicios -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Service Item 1 -->
+                    <div class="swiper-slide">
+                        <div class="service-item" data-title="Sand Bags" data-description="Instalación de Sand Bags para la protección y contención de sedimentos en proyectos de construcción." data-before="images/sand_bags_before.jpg" data-after="images/sand_bags_after.jpg">
+                            <img src="images/sand_bags_icon.png" alt="Sand Bags">
+                            <h3>Sand Bags</h3>
+                        </div>
+                    </div>
+                    <!-- Service Item 2 -->
+                    <div class="swiper-slide">
+                        <div class="service-item" data-title="Limpieza de Calles" data-description="Servicios de limpieza de calles para mantener un entorno limpio y seguro." data-before="images/street_cleaning_before.jpg" data-after="images/street_cleaning_after.jpg">
+                            <img src="images/street_cleaning_icon.png" alt="Limpieza de Calles">
+                            <h3>Limpieza de Calles</h3>
+                        </div>
+                    </div>
+                    <!-- Service Item 3 -->
+                    <div class="swiper-slide">
+                        <div class="service-item" data-title="Lavado a Presión" data-description="Lavado a presión para la limpieza eficiente de superficies y estructuras." data-before="images/pressure_washer_before.jpg" data-after="images/pressure_washer_after.jpg">
+                            <img src="images/pressure_washer_icon.png" alt="Lavado a Presión">
+                            <h3>Lavado a Presión</h3>
+                        </div>
+                    </div>
+                    <!-- Service Item 4 -->
+                    <div class="swiper-slide">
+                        <div class="service-item" data-title="Silt Fence" data-description="Instalación de Silt Fence para la contención de sedimentos en sitios de construcción." data-before="images/silt_fence_before.jpg" data-after="images/silt_fence_after.jpg">
+                            <img src="images/silt_fence_icon.png" alt="Silt Fence">
+                            <h3>Silt Fence</h3>
+                        </div>
+                    </div>
+                    <!-- Service Item 5 -->
+                    <div class="swiper-slide">
+                        <div class="service-item" data-title="Orange Fence" data-description="Instalación de Orange Fence para la seguridad y delimitación de áreas de trabajo." data-before="images/orange_fence_before.jpg" data-after="images/orange_fence_after.jpg">
+                            <img src="images/orange_fence_icon.png" alt="Orange Fence">
+                            <h3>Orange Fence</h3>
+                        </div>
+                    </div>
+                    <!-- Service Item 6 -->
+                    <div class="swiper-slide">
+                        <div class="service-item" data-title="Storm Cover" data-description="Instalación de Storm Cover para proteger áreas de construcción contra condiciones climáticas adversas." data-before="images/storm_cover_before.jpg" data-after="images/storm_cover_after.jpg">
+                            <img src="images/storm_cover_icon.png" alt="Storm Cover">
+                            <h3>Storm Cover</h3>
+                        </div>
+                    </div>
+                    <!-- Service Item 7 -->
+                    <div class="swiper-slide">
+                        <div class="service-item" data-title="Wire Trash Bins" data-description="Instalación de Wire Trash Bins para la gestión eficiente de residuos en sitios de construcción." data-before="images/wire_trash_bins_before.jpg" data-after="images/wire_trash_bins_after.jpg">
+                            <img src="images/wire_trash_bins_icon.png" alt="Wire Trash Bins">
+                            <h3>Wire Trash Bins</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Swiper Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <!-- Swiper para Testimonios -->
+            <div class="swiper testimonialsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <p>"Profesionalismo al 100%"</p>
+                            <h4>Juanita - Gerente</h4>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <p>"Muy profesionales y atentos a cada detalle. Su compromiso hizo que todo el proceso fuera sencillo y sin preocupaciones."</p>
+                            <h4>Ana Martínez - Arquitecta</h4>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <p>"Estoy muy satisfecho con el servicio recibido. El equipo fue muy eficiente y siempre estuvo disponible para resolver cualquier duda."</p>
+                            <h4>Javier Gómez - Ingeniero</h4>
+                        </div>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <p>"Excelente atención y resultados impecables. Recomiendo ampliamente Buezo's Construction."</p>
+                            <h4>María López - Propietaria</h4>
+                        </div>
+                    </div>
+                    <!-- Testimonial 5 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <p>"Un equipo de trabajo comprometido y profesional. Hicieron un trabajo fantástico."</p>
+                            <h4>Pedro Sánchez - Supervisor</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Swiper Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-content">
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="tel" name="phone" placeholder="Teléfono">
+                    <input type="email" name="email" placeholder="Correo Electrónico" required>
+                    <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+                    <button type="submit" class="btn">Enviar</button>
+                </form>
+                <div class="contact-info">
+                    <p><strong>Dirección:</strong> Houston, TX 77094, EE. UU., P.O. Box 940331</p>
+                    <p><strong>Teléfono:</strong> <a href="tel:+17133578311">+1-713-357-8311</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:buezohugol@yahoo.co">buezohugol@yahoo.co</a></p>
+                    <p><strong>Horario:</strong> Lun-Vie: 08:00-19:00</p>
+                    <!-- Mapa de Google -->
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Servicios -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle">Título del Servicio</h2>
+            <p id="modalDescription">Descripción del servicio.</p>
+            <!-- Swiper para Antes y Después -->
+            <div class="swiper before-after-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="before-after-content">
+                            <h3>Antes</h3>
+                            <img id="beforeImage" src="" alt="Antes">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="before-after-content">
+                            <h3>Después</h3>
+                            <img id="afterImage" src="" alt="Después">
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Swiper Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Buezo's Construction. Todos los derechos reservados.</p>
+                    <p>Desarrollado por <a href="https://es.site123.com" target="_blank">SITE123</a></p>
+                </div>
+                <div class="footer-right">
+                    <ul class="social-links">
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                        <li><a href="#" target="_blank">LinkedIn</a></li>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="scripts.js"></script>
+    <!-- Google Maps API (Reemplaza "TU_API_KEY" con tu clave real) -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
