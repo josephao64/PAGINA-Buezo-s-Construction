@@ -519,7 +519,6 @@ section {
         font-size: 1.8rem;
     }
 
-    /* Menú responsivo */
     #menu-toggler {
         display: none;
     }
@@ -620,7 +619,6 @@ section {
         flex-direction: column;
     }
 
-    /* Ajustar las tarjetas de servicios y testimonios en móvil */
     .services .swiper-slide {
         width: 80% !important;
         margin: 0 auto;

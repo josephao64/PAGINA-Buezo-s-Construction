@@ -165,13 +165,16 @@ document.querySelectorAll('.nav__link').forEach(link => {
       });
   }
   
-  // Validación Básica del Formulario de Contacto
+  // Lógica para enviar el formulario de contacto por correo usando EmailJS
   const contactForm = document.getElementById('contactForm');
   
   contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
+  
+      // Obtener valores del formulario
       const name = contactForm.name.value.trim();
       const email = contactForm.email.value.trim();
+      const phone = contactForm.phone.value.trim();
       const message = contactForm.message.value.trim();
   
       if (name === '' || email === '' || message === '') {
@@ -179,7 +182,21 @@ document.querySelectorAll('.nav__link').forEach(link => {
           return;
       }
   
-      alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-      contactForm.reset();
+      // Enviar correo con EmailJS
+      // Debes haber configurado un template en EmailJS con campos "from_name", "reply_to", "phone" y "message"
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+          from_name: name,
+          reply_to: email,
+          phone: phone,
+          message: message
+      })
+      .then(() => {
+          alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+          contactForm.reset();
+      })
+      .catch((error) => {
+          console.error('Error al enviar el correo:', error);
+          alert('Hubo un problema al enviar el mensaje. Inténtalo más tarde.');
+      });
   });
   
