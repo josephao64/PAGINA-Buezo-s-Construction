@@ -104,33 +104,42 @@ document.querySelectorAll('.nav__link').forEach(link => {
   }
   
   serviceItems.forEach(item => {
-      item.addEventListener('click', () => {
-          const title = item.getAttribute('data-title');
-          const description = item.getAttribute('data-description');
-  
-          modalTitle.textContent = title;
-          modalDescription.textContent = description;
-  
-          if (title === "Street Cleans") {
-              beforeImage.src = 'images/a1.jpg';
-              beforeImage.alt = `Antes de ${title}`;
-              afterImage.src = 'images/d1.jpg';
-              afterImage.alt = `Después de ${title}`;
-          } else {
-              beforeImage.src = '';
-              beforeImage.alt = 'Sin imagen';
-              afterImage.src = '';
-              afterImage.alt = 'Sin imagen';
-          }
-  
-          if (!beforeAfterSwiper) {
-              initBeforeAfterSwiper();
-          }
-  
-          modal.style.display = 'block';
-      });
-  });
-  
+    item.addEventListener('click', () => {
+        const title = item.getAttribute('data-title');
+        const description = item.getAttribute('data-description');
+
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+
+        // Reiniciar imágenes
+        beforeImage.src = '';
+        beforeImage.alt = 'Sin imagen';
+        afterImage.src = '';
+        afterImage.alt = 'Sin imagen';
+
+        // Configurar imágenes según el título
+        if (title === "Street Cleans") {
+            beforeImage.src = 'images/a1.jpg';
+            beforeImage.alt = `Antes de ${title}`;
+            afterImage.src = 'images/d1.jpg';
+            afterImage.alt = `Después de ${title}`;
+        } else if (title === "Orange Fence") {
+            beforeImage.src = 'images/orangefenceantes.jpg';
+            beforeImage.alt = `Antes de ${title}`;
+            afterImage.src = 'images/orangefencedespues.jpg';
+            afterImage.alt = `Después de ${title}`;
+        }
+
+        // Inicializar el swiper si no está inicializado
+        if (!beforeAfterSwiper) {
+            initBeforeAfterSwiper();
+        }
+
+        // Mostrar el modal
+        modal.style.display = 'block';
+    });
+});
+
   // Cerrar el modal al hacer clic en la "X"
   closeButton.addEventListener('click', () => {
       modal.style.display = 'none';
