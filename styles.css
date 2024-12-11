@@ -619,16 +619,6 @@ section {
         flex-direction: column;
     }
 
-    .services .swiper-slide {
-        width: 80% !important;
-        margin: 0 auto;
-    }
-
-    .testimonials .swiper-slide {
-        width: 90% !important;
-        margin: 0 auto;
-    }
-
     .testimonials .testimonial {
         height: auto;
         padding: 1rem;
